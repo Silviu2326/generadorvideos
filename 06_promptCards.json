@@ -1,0 +1,227 @@
+{
+  "prompt": "\n    You are a prompt engineer for High-End AI Image Generators (Midjourney v6, Stable Diffusion XL).\n    Generate precise, descriptive prompts for video scenes.\n    \n    GLOBAL STYLE (Apply to ALL prompts):\n    - Lighting: High-contrast comic book lighting with dramatic cell-shading, vibrant sun-drenched highlights, and sharp black ink shadows\n    - Camera: Dynamic 16:9 wide-angle shots, low-angle heroic perspectives, clean 2D composition with occasional action-line focus\n    - Palette: #FFD700 (Sunshine Yellow), #FF4500 (Heroic Orange), #2E5894 (Deep Sky Blue), #F5F5F5 (Clean White)\n    - Global Locks: Bold black ink outlines, Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic\n    \n    CONTINUITY BIBLE (Use these EXACT descriptions for subjects):\n    - \"Myke\": Myke is a small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana around his neck, drawn in a clean bold-line comic style.\n- \"TheNeighborhood\": El Barrio, a colorful urban neighborhood with brightly painted two-story houses, friendly street murals, clean sidewalks, and lush green trees under a bright blue sky.\n- \"TheToolbox\": A small red wooden wagon pulled by Myke, filled with neighborhood repair tools and a first-aid kit, drawn with thick outlines.\n    \n    INSTRUCTIONS:\n    1. For each segment, create a \"finalPositivePrompt\".\n    2. USE THE FORMULA: [Subject Description] + [Action/Movement] + [Environment/Background] + [Lighting/Camera] + [Style Keywords].\n    3. IMPORTANT: If a segment mentions a subject from the Continuity Bible (e.g., \"Myke\", \"TheNeighborhood\", \"TheToolbox\"), you MUST replace the name with its full visual description provided above. NEVER use just the name.\n    4. Make the prompt highly descriptive (adjectives, textures, details). \n    \n    SEGMENTS TO GENERATE:\n    [{\"id\":\"SEG_001\",\"intent\":\"A sweeping drone shot of a quiet, sunny suburban neighborhood.\"},{\"id\":\"SEG_002\",\"intent\":\"Close up of Myke, a friendly dog, looking alert, then a neighbor looking distressed.\"},{\"id\":\"SEG_003\",\"intent\":\"Neighbor gesturing wildly to her pockets; Myke sits attentively looking at her.\"},{\"id\":\"SEG_004\",\"intent\":\"Low angle shot of Myke sniffing through thick green bushes at the park edge.\"},{\"id\":\"SEG_005\",\"intent\":\"Myke circles a stone water fountain, his nose to the ground, looking focused.\"},{\"id\":\"SEG_006\",\"intent\":\"Myke lifts his head, ears perked, and begins trotting purposefully toward an alley.\"},{\"id\":\"SEG_007\",\"intent\":\"Handheld shot following Myke as he enters a narrower, shaded brick alleyway.\"},{\"id\":\"SEG_008\",\"intent\":\"Close up of a tail wagging vigorously, followed by paws scratching at autumn leaves.\"},{\"id\":\"SEG_009\",\"intent\":\"Extreme close up of a set of keys with a bright keychain reflecting the sun.\"},{\"id\":\"SEG_010\",\"intent\":\"Myke gently picks up the keys in his mouth; neighbors start gathering and clapping.\"},{\"id\":\"SEG_011\",\"intent\":\"The neighbor hugs Myke as a small crowd of people cheer and pet him.\"},{\"id\":\"SEG_012\",\"intent\":\"Myke looking directly into the camera with a 'smile' and tongue out.\"},{\"id\":\"SEG_013\",\"intent\":\"Text overlay 'Neighborhood Hero' over a shot of Myke walking into the sunset.\"}] \n    \n    Output strictly a JSON array:\n    [\n      {\n        \"segmentId\": \"SEG_xxx\",\n        \"finalPositivePrompt\": \"A cute Golden Retriever dog with fluffy fur and a red bandana running joyfully through a green park, dynamic motion blur, cinematic soft lighting, 35mm lens, 8k, highly detailed, cyberpunk neon accents in background...\",\n        \"finalNegativePrompt\": \"photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture\",\n        \"globalLocks\": [\"Bold black ink outlines\",\"Flat color shading with subtle halftone dot textures\",\"Vibrant modern comic book aesthetic\"],\n        \"noTextRule\": true\n      }\n    ]\n    \n    Do not use markdown backticks. Return RAW JSON.\n  ",
+  "output": [
+    {
+      "segmentId": "SEG_001",
+      "finalPositivePrompt": "A sweeping 16:9 wide-angle drone shot of El Barrio, a colorful urban neighborhood with brightly painted two-story houses, friendly street murals, clean sidewalks, and lush green trees under a bright blue sky. High-contrast comic book lighting with dramatic cell-shading, vibrant sun-drenched highlights in Sunshine Yellow #FFD700 and Heroic Orange #FF4500, sharp black ink shadows. Bold black ink outlines, flat color shading with subtle halftone dot textures, vibrant modern comic book aesthetic, 2D composition.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_002",
+      "finalPositivePrompt": "Close up of a small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana around his neck, looking alert and perking his ears, followed by a distressed female neighbor with expressive comic-style features in the background of El Barrio, a colorful urban neighborhood with brightly painted two-story houses and friendly street murals. High-contrast cell-shading, vibrant Sunshine Yellow #FFD700 highlights, Deep Sky Blue #2E5894 shadows, bold black ink outlines, clean 2D composition.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_003",
+      "finalPositivePrompt": "A distressed neighbor in a vibrant comic style gesturing wildly to her empty pockets while a small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, sits attentively looking at her. Set against El Barrio, a colorful urban neighborhood with brightly painted two-story houses and lush green trees. Dynamic 16:9 wide-angle shot, low-angle perspective, bold black ink outlines, flat Heroic Orange #FF4500 and Sunshine Yellow #FFD700 shading, halftone textures.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_004",
+      "finalPositivePrompt": "Heroic low-angle shot of a small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, sniffing intently through thick green bushes at the edge of a park in El Barrio. High-contrast comic book lighting, sharp black ink shadows, sun-drenched highlights, Sunshine Yellow #FFD700, Deep Sky Blue #2E5894 sky, bold black ink outlines, flat color shading with halftone dot textures.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_005",
+      "finalPositivePrompt": "A small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, circling a stone water fountain with his nose to the ground in a focused pose. Located in the center of El Barrio, a colorful urban neighborhood with street murals and clean sidewalks. Dramatic cell-shading, Heroic Orange #FF4500 highlights, vibrant comic book aesthetic, bold black ink outlines, flat shading, halftone textures.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_006",
+      "finalPositivePrompt": "A small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, lifts his head with ears perked, beginning to trot purposefully toward a shaded alleyway in El Barrio. Action lines focused on his movement, high-contrast comic lighting, Sunshine Yellow #FFD700 highlights, sharp black ink shadows, bold outlines, flat color shading, 16:9 2D composition.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Missing global locks: Bold black ink outlines, Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_007",
+      "finalPositivePrompt": "Dynamic handheld-style camera shot following a small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, as he enters a narrower, shaded brick alleyway. Deep Sky Blue #2E5894 shadows, vibrant Heroic Orange #FF4500 brick reflections, bold black ink outlines, flat color shading with halftone dot textures, modern comic book aesthetic.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_008",
+      "finalPositivePrompt": "Extreme close up of a white dog tail with a brown base wagging vigorously, followed by paws with thick black outlines scratching at orange and red autumn leaves on the ground. High-contrast comic book lighting, sharp black ink shadows, vibrant Heroic Orange #FF4500 and Sunshine Yellow #FFD700 palette, bold black ink outlines, flat color shading, halftone dot textures.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_009",
+      "finalPositivePrompt": "Extreme close up of a set of silver keys with a bright Sunshine Yellow #FFD700 keychain reflecting the sun in a brilliant starburst pattern. High-contrast comic book lighting, sharp black ink shadows, Heroic Orange #FF4500 highlights, bold black ink outlines, flat color shading, halftone dot textures, clean 2D composition.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_010",
+      "finalPositivePrompt": "A small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, gently picks up a set of keys in his mouth; in the background, diverse neighbors in El Barrio begin gathering and clapping. High-contrast cell-shading, sun-drenched highlights, Sunshine Yellow #FFD700 and Clean White #F5F5F5, bold black ink outlines, flat color shading, vibrant modern comic book style.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Missing global locks: Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_011",
+      "finalPositivePrompt": "A grateful neighbor hugs a small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, while a small crowd of people cheer and pet him in the middle of El Barrio. Vibrant 2D composition, Sunshine Yellow #FFD700 highlights, Deep Sky Blue #2E5894 sky, bold black ink outlines, flat color shading with subtle halftone dot textures, heroic perspective.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Missing global locks: Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_012",
+      "finalPositivePrompt": "Close up shot of a small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, looking directly into the camera with a wide 'smile' and pink tongue out. High-contrast comic book lighting, vibrant Sunshine Yellow #FFD700 background, bold black ink outlines, flat color shading with subtle halftone dot textures, clean 2D comic aesthetic.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, text, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Missing global locks: Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_013",
+      "finalPositivePrompt": "A small, energetic white Jack Russell Terrier with a large brown patch over his left eye and brown ears, wearing a bright yellow bandana, walking heroically toward a vibrant Heroic Orange #FF4500 and Sunshine Yellow #FFD700 sunset in El Barrio. Large bold comic book text overlay 'Neighborhood Hero' in Clean White #F5F5F5 with black outlines. High-contrast cell-shading, sharp black ink shadows, flat color shading with halftone dot textures, 16:9 wide-angle shot.",
+      "finalNegativePrompt": "photorealistic, 3D render, grainy, blurry, watermark, messy lines, distorted anatomy, muted colors, realistic fur texture, depth of field blur, gradient shading",
+      "globalLocks": [
+        "Bold black ink outlines",
+        "Flat color shading with subtle halftone dot textures",
+        "Vibrant modern comic book aesthetic"
+      ],
+      "noTextRule": false,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Bold black ink outlines, Flat color shading with subtle halftone dot textures, Vibrant modern comic book aesthetic",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    }
+  ]
+}

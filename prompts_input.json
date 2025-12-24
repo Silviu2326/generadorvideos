@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "prompt": "Explica CSS de forma sencilla para niños"
+  },
+  {
+    "id": 2,
+    "prompt": "Genera una lista de ideas para videos de YouTube sobre IA"
+  },
+  {
+    "id": 3,
+    "prompt": "Escribe un poema corto sobre la lluvia en Tokio"
+  }
+]

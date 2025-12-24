@@ -1,0 +1,538 @@
+{
+  "projectId": "temp-1766406478591",
+  "runId": "run_1766406271542",
+  "brief": {
+    "title": "Cuando cruzan la puerta del cielo: el primer día de nuestras mascotas en el paraíso",
+    "goal": "Dicen que cuando nuestras mascotas cierran los ojos aquí, los abren en otro lugar.\nUn lugar donde no existe el dolor, donde corren libres, donde la luz es suave y el amor es eterno.\n",
+    "format": "16:9",
+    "targetDurationSec": 60,
+    "blueprint": "narrative",
+    "visualStyle": "ghibli",
+    "languages": [
+      "ES"
+    ],
+    "voice": {
+      "ES": {
+        "voiceId": "alloy"
+      }
+    },
+    "noTextInImages": true
+  },
+  "version": "draft-1",
+  "blueprint": "narrative",
+  "budgets": {
+    "wpm": 130,
+    "targetWords": 130,
+    "minWords": 117,
+    "maxWords": 143,
+    "hookSec": 6,
+    "bodySec": 39,
+    "closeSec": 15
+  },
+  "outline": {
+    "sections": [
+      {
+        "id": "S1",
+        "title": "Hook",
+        "goal": "Capture the emotional transition from loss to peace.",
+        "timeBudgetSec": 3,
+        "wordBudget": 7,
+        "keyPoints": [
+          "Visual of a pet closing eyes here and opening them there",
+          "The mystery of the first moment"
+        ],
+        "bridgeToNext": "Transition to the atmosphere of the afterlife."
+      },
+      {
+        "id": "S2",
+        "title": "Introduction",
+        "goal": "Set the scene of the 'Paradise'.",
+        "timeBudgetSec": 3,
+        "wordBudget": 7,
+        "keyPoints": [
+          "Soft golden light",
+          "A place without pain"
+        ],
+        "bridgeToNext": "Focus on the physical transformation of the pet."
+      },
+      {
+        "id": "S3",
+        "title": "Rising Action",
+        "goal": "Describe the physical relief and new energy.",
+        "timeBudgetSec": 15,
+        "wordBudget": 33,
+        "keyPoints": [
+          "The pain disappears instantly",
+          "Paws run through infinite green meadows",
+          "They regain the strength of their youth",
+          "Flowers that never wither"
+        ],
+        "bridgeToNext": "Moving from physical sensation to social joy."
+      },
+      {
+        "id": "S4",
+        "title": "Climax",
+        "goal": "The joy of meeting others and pure happiness.",
+        "timeBudgetSec": 12,
+        "wordBudget": 26,
+        "keyPoints": [
+          "Thousands of wagging tails",
+          "Meeting old friends and new ones",
+          "Realization that the love from home stays with them"
+        ],
+        "bridgeToNext": "A moment of calm and reflection."
+      },
+      {
+        "id": "S5",
+        "title": "Falling Action",
+        "goal": "Show the peaceful resting state.",
+        "timeBudgetSec": 12,
+        "wordBudget": 26,
+        "keyPoints": [
+          "Resting on soft grass",
+          "Watching the horizon with deep peace",
+          "The concept of a perfect playground"
+        ],
+        "bridgeToNext": "The final message to the owner."
+      },
+      {
+        "id": "S6",
+        "title": "Resolution",
+        "goal": "Provide comfort and hope for a future reunion.",
+        "timeBudgetSec": 15,
+        "wordBudget": 31,
+        "keyPoints": [
+          "They are healthy and free",
+          "The door will unite us again",
+          "It's not a goodbye, they are home"
+        ],
+        "bridgeToNext": "Fade to white/logo."
+      }
+    ],
+    "entities": [
+      {
+        "name": "The Golden Door",
+        "type": "location",
+        "description": "A radiant, ethereal threshold between the physical world and paradise."
+      },
+      {
+        "name": "Eternal Meadows",
+        "type": "location",
+        "description": "Lush, vibrant green fields under a permanent soft sunset glow."
+      },
+      {
+        "name": "The Restored Pet",
+        "type": "character",
+        "description": "A pet appearing healthy, energetic, and free of any previous illness or age."
+      }
+    ]
+  },
+  "scriptBlocks": [
+    {
+      "sectionId": "S1",
+      "text": "¿Qué queda después del último suspiro? Un parpadeo ámbar. El dolor se disuelve. Frente a Oliver, el Portal de los Pétalos estalla en pura luz.",
+      "wordCount": 25,
+      "estimatedSec": 12,
+      "version": 2,
+      "translations": {}
+    },
+    {
+      "sectionId": "S2",
+      "text": "¿Hay algo más allá del silencio? Oliver abre los ojos. El aire sabe a jazmín. Su pequeño cuerpo ya no sufre; ahora vibra, se sana y renace.",
+      "wordCount": 27,
+      "estimatedSec": 12,
+      "version": 2,
+      "translations": {}
+    },
+    {
+      "sectionId": "S3",
+      "text": "¿Sientes esa ligereza? Un salto. Otro más. Sus patas vuelan sobre el pasto. El Collar Estelar destella, guiando su carrera hacia un nuevo encuentro.",
+      "wordCount": 24,
+      "estimatedSec": 11,
+      "version": 2,
+      "translations": {}
+    },
+    {
+      "sectionId": "S4",
+      "text": "¿Oyes ese eco de alegría? Luna lo espera. Son dos manchas blancas perdiéndose entre margaritas. El pulso, por fin, encuentra su calma.",
+      "wordCount": 22,
+      "estimatedSec": 10,
+      "version": 2,
+      "translations": {}
+    },
+    {
+      "sectionId": "S5",
+      "text": "¿Has visto el sol que nunca se pone? Oliver descansa bajo el abrigo de Luna. Su collar emite un calor suave. Es el sonido de un susurro que regresa a casa.",
+      "wordCount": 31,
+      "estimatedSec": 14,
+      "version": 2,
+      "translations": {}
+    },
+    {
+      "sectionId": "S6",
+      "text": "¿Oyes ese ladrido en el viento? No existen las despedidas. Solo carreras libres y destellos dorados. Es la promesa de un abrazo que ya comenzó.",
+      "wordCount": 25,
+      "estimatedSec": 12,
+      "version": 2,
+      "translations": {}
+    }
+  ],
+  "sceneMap": [
+    {
+      "id": "SEG_001",
+      "sectionId": "S1",
+      "startSec": 0,
+      "endSec": 10,
+      "narration": "¿Qué queda después del último suspiro? Un parpadeo ámbar. El dolor se disuelve. Frente a Oliver, el Portal de los Pétalos estalla en pura luz.",
+      "visualIntent": "Extreme close-up of a dog's amber eye fluttering shut, transitioning into a blinding explosion of white and gold light shaped like flower petals.",
+      "shotType": "broll",
+      "beatType": "hook",
+      "visualRole": "establishing",
+      "continuityTags": [
+        "loc:liminal-space",
+        "light:ethereal-glow"
+      ]
+    },
+    {
+      "id": "SEG_002",
+      "sectionId": "S2",
+      "startSec": 10,
+      "endSec": 20,
+      "narration": "¿Hay algo más allá del silencio? Oliver abre los ojos. El aire sabe a jazmín. Su pequeño cuerpo ya no sufre; ahora vibra, se sana y renace.",
+      "visualIntent": "Oliver, a small white dog, wakes up in a lush meadow filled with jasmine; his movements are fluid and energetic as a faint aura surrounds him.",
+      "shotType": "broll",
+      "beatType": "explanation",
+      "visualRole": "supporting",
+      "continuityTags": [
+        "loc:jasmine-meadow",
+        "light:soft-morning"
+      ]
+    },
+    {
+      "id": "SEG_003",
+      "sectionId": "S3",
+      "startSec": 20,
+      "endSec": 30,
+      "narration": "¿Sientes esa ligereza? Un salto. Otro más. Sus patas vuelan sobre el pasto. El Collar Estelar destella, guiando su carrera hacia un nuevo encuentro.",
+      "visualIntent": "Low-angle tracking shot of Oliver sprinting through tall grass. His blue star collar pulses with light, leaving a faint trail behind him.",
+      "shotType": "broll",
+      "beatType": "example",
+      "visualRole": "supporting",
+      "continuityTags": [
+        "loc:grassy-field",
+        "light:vibrant-daylight"
+      ]
+    },
+    {
+      "id": "SEG_004",
+      "sectionId": "S4",
+      "startSec": 30,
+      "endSec": 40,
+      "narration": "¿Oyes ese eco de alegría? Luna lo espera. Son dos manchas blancas perdiéndose entre margaritas. El pulso, por fin, encuentra su calma.",
+      "visualIntent": "A second white dog, Luna, appears from a field of daisies. The two dogs play-bow and begin running side-by-side toward the horizon.",
+      "shotType": "broll",
+      "beatType": "transition",
+      "visualRole": "supporting",
+      "continuityTags": [
+        "loc:daisy-field",
+        "light:warm-golden-hour"
+      ]
+    },
+    {
+      "id": "SEG_005",
+      "sectionId": "S5",
+      "startSec": 40,
+      "endSec": 50,
+      "narration": "¿Has visto el sol que nunca se pone? Oliver descansa bajo el abrigo de Luna. Su collar emite un calor suave. Es el sonido de un susurro que regresa a casa.",
+      "visualIntent": "Wide shot of Oliver and Luna curled up together under a massive, glowing tree as a permanent sunset bathes the landscape in gold.",
+      "shotType": "broll",
+      "beatType": "explanation",
+      "visualRole": "recap",
+      "continuityTags": [
+        "loc:eternal-tree",
+        "light:golden-hour"
+      ]
+    },
+    {
+      "id": "SEG_006",
+      "sectionId": "S6",
+      "startSec": 50,
+      "endSec": 60,
+      "narration": "¿Oyes ese ladrido en el viento? No existen las despedidas. Solo carreras libres y destellos dorados. Es la promesa de un abrazo que ya comenzó.",
+      "visualIntent": "The dogs run toward a brilliant sun, turning into silhouettes as the screen fills with golden particles and a soft lens flare.",
+      "shotType": "broll",
+      "beatType": "cta",
+      "visualRole": "cta",
+      "continuityTags": [
+        "loc:heavenly-horizon",
+        "light:overexposed-gold"
+      ]
+    }
+  ],
+  "styleBible": {
+    "palette": [
+      "#A1C9F1 (Ethereal Sky Blue)",
+      "#8DBF8B (Soft Meadow Green)",
+      "#FFF9C4 (Golden Celestial Glow)",
+      "#FCE4EC (Soft Petal Pink)",
+      "#E1F5FE (Crystal Clear Water)"
+    ],
+    "lighting": "Warm ethereal morning light, volumetric 'God rays' filtering through soft clouds, glowing rim light on fur, nostalgic Studio Ghibli golden hour warmth, soft watercolor diffusion.",
+    "camera": "Studio Ghibli cinematic 2D animation style, shot on 35mm wide-angle for landscapes, f/2.8 for soft background bokeh in close-ups, hand-painted texture aesthetic.",
+    "negativePrompt": "3D, CGI, realistic, photorealistic, dark, gritty, urban, technology, sharp edges, distorted anatomy, extra limbs, text, watermark, blurry, low quality, sad atmosphere, muted colors.",
+    "globalLocks": [
+      "Studio Ghibli art style",
+      "Hand-painted watercolor textures",
+      "Whimsical dreamlike atmosphere",
+      "Vibrant but soft pastel palette"
+    ],
+    "continuityBible": {
+      "Oliver": "A small, fluffy ginger tabby cat with large, expressive amber eyes and a soft pink nose. Studio Ghibli style: soft watercolor fur textures, rounded features, and an innocent, curious expression.",
+      "Luna": "A graceful, elderly Golden Retriever with cream-colored fur that glows with a faint white aura. She wears a crown of tiny daisies and has a calm, welcoming smile. Studio Ghibli style: gentle eyes and flowing, hand-painted fur.",
+      "The Gateway of Petals": "A massive, ancient stone archway overgrown with glowing blue wisteria and pink cherry blossoms. It stands atop a hill of clouds, with soft sunlight streaming through the opening. Studio Ghibli style: lush vegetation, vibrant colors, and magical light rays.",
+      "The Eternal Meadow": "Vast rolling hills of emerald green grass that never ends, dotted with shimmering wildflowers of every color. A crystal-clear stream winds through the center, and the sky is a permanent sunset of soft orange and violet. Studio Ghibli style: hyper-detailed nature, swaying grass, and painterly clouds.",
+      "The Star Collar": "A simple leather collar that transforms into a band of woven starlight once the pet enters the meadow. It emits a soft, warm golden glow and lacks a leash, symbolizing total freedom. Studio Ghibli style: sparkling magical particles and clean, nostalgic lines."
+    },
+    "promptTemplate": "[Subject Description] [Action] [Environment], [Lighting], [Camera], [Palette/Style], high quality Studio Ghibli animation frame"
+  },
+  "promptCards": [
+    {
+      "segmentId": "SEG_001",
+      "finalPositivePrompt": "Extreme close-up macro shot of a canine amber eye fluttering shut, Studio Ghibli cinematic 2D animation style, hand-painted watercolor textures. The scene transitions into a blinding explosion of white and gold light shaped like shimmering flower petals. Warm ethereal morning light, volumetric God rays, soft watercolor diffusion, f/2.8 for soft background bokeh. Palette of #FFF9C4 (Golden Celestial Glow) and #FCE4EC (Soft Petal Pink). Whimsical dreamlike atmosphere, nostalgic Studio Ghibli golden hour warmth.",
+      "finalNegativePrompt": "3D, CGI, realistic, photorealistic, dark, gritty, urban, technology, sharp edges, distorted anatomy, extra limbs, text, watermark, blurry, low quality, sad atmosphere, muted colors.",
+      "globalLocks": [
+        "Studio Ghibli art style",
+        "Hand-painted watercolor textures",
+        "Whimsical dreamlike atmosphere",
+        "Vibrant but soft pastel palette"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Studio Ghibli art style, Vibrant but soft pastel palette",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_002",
+      "finalPositivePrompt": "A small, fluffy ginger tabby cat with large, expressive amber eyes and a soft pink nose, with soft watercolor fur textures and an innocent, curious expression, wakes up in vast rolling hills of emerald green grass that never ends. His movements are fluid and energetic as a faint aura surrounds him, set amidst shimmering jasmine and wildflowers. Background of The Eternal Meadow with a crystal-clear stream. Warm ethereal morning light, volumetric God rays, glowing rim light on fur, 35mm wide-angle lens, hand-painted texture aesthetic. Palette: #8DBF8B (Soft Meadow Green), #A1C9F1 (Ethereal Sky Blue).",
+      "finalNegativePrompt": "3D, CGI, realistic, photorealistic, dark, gritty, urban, technology, sharp edges, distorted anatomy, extra limbs, text, watermark, blurry, low quality, sad atmosphere, muted colors.",
+      "globalLocks": [
+        "Studio Ghibli art style",
+        "Hand-painted watercolor textures",
+        "Whimsical dreamlike atmosphere",
+        "Vibrant but soft pastel palette"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Studio Ghibli art style, Hand-painted watercolor textures, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_003",
+      "finalPositivePrompt": "Low-angle tracking shot of a small, fluffy ginger tabby cat with large, expressive amber eyes and a soft pink nose sprinting through tall emerald green grass. He wears a simple leather collar that transforms into a band of woven starlight, emitting a soft, warm golden glow and lacking a leash, leaving a faint trail of sparkling magical particles behind him. Studio Ghibli cinematic 2D animation style, hand-painted fur, shot on 35mm. Warm ethereal morning light, God rays, nostalgic golden hour warmth. Palette: #FFF9C4 (Golden Celestial Glow), #8DBF8B (Soft Meadow Green).",
+      "finalNegativePrompt": "3D, CGI, realistic, photorealistic, dark, gritty, urban, technology, sharp edges, distorted anatomy, extra limbs, text, watermark, blurry, low quality, sad atmosphere, muted colors.",
+      "globalLocks": [
+        "Studio Ghibli art style",
+        "Hand-painted watercolor textures",
+        "Whimsical dreamlike atmosphere",
+        "Vibrant but soft pastel palette"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Studio Ghibli art style, Hand-painted watercolor textures, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_004",
+      "finalPositivePrompt": "A graceful, elderly Golden Retriever with cream-colored fur that glows with a faint white aura, wearing a crown of tiny daisies and a calm, welcoming smile, appears from a field of shimmering wildflowers. She and a small, fluffy ginger tabby cat with large, expressive amber eyes and a soft pink nose play-bow together and begin running side-by-side toward the horizon of vast rolling hills of emerald green grass. Studio Ghibli style, hand-painted watercolor textures, soft background bokeh, cinematic 2D animation. Palette: #FCE4EC (Soft Petal Pink), #E1F5FE (Crystal Clear Water), #8DBF8B (Soft Meadow Green).",
+      "finalNegativePrompt": "3D, CGI, realistic, photorealistic, dark, gritty, urban, technology, sharp edges, distorted anatomy, extra limbs, text, watermark, blurry, low quality, sad atmosphere, muted colors.",
+      "globalLocks": [
+        "Studio Ghibli art style",
+        "Hand-painted watercolor textures",
+        "Whimsical dreamlike atmosphere",
+        "Vibrant but soft pastel palette"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Studio Ghibli art style, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_005",
+      "finalPositivePrompt": "Wide shot of a small, fluffy ginger tabby cat with large, expressive amber eyes and a graceful, elderly Golden Retriever with cream-colored fur that glows with a faint white aura curled up together under a massive, glowing ancient tree. The landscape of The Eternal Meadow is bathed in a permanent sunset of soft orange and violet, with golden light streaming through the leaves. Studio Ghibli cinematic 2D animation style, hand-painted texture aesthetic, 35mm wide-angle. Warm ethereal morning light, God rays, nostalgic golden hour warmth. Palette: #FFF9C4 (Golden Celestial Glow), #A1C9F1 (Ethereal Sky Blue).",
+      "finalNegativePrompt": "3D, CGI, realistic, photorealistic, dark, gritty, urban, technology, sharp edges, distorted anatomy, extra limbs, text, watermark, blurry, low quality, sad atmosphere, muted colors.",
+      "globalLocks": [
+        "Studio Ghibli art style",
+        "Hand-painted watercolor textures",
+        "Whimsical dreamlike atmosphere",
+        "Vibrant but soft pastel palette"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Studio Ghibli art style, Hand-painted watercolor textures, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    },
+    {
+      "segmentId": "SEG_006",
+      "finalPositivePrompt": "A small, fluffy ginger tabby cat with amber eyes and a graceful, elderly Golden Retriever with glowing cream fur run toward a brilliant sun over vast rolling hills of emerald green grass. They turn into silhouettes as the screen fills with golden sparkling starlight particles and a soft watercolor lens flare. Studio Ghibli art style, hand-painted watercolor textures, whimsical dreamlike atmosphere. Permanent sunset of soft orange and violet, warm ethereal light, volumetric God rays. Palette: #FFF9C4 (Golden Celestial Glow), #FCE4EC (Soft Petal Pink).",
+      "finalNegativePrompt": "3D, CGI, realistic, photorealistic, dark, gritty, urban, technology, sharp edges, distorted anatomy, extra limbs, text, watermark, blurry, low quality, sad atmosphere, muted colors.",
+      "globalLocks": [
+        "Studio Ghibli art style",
+        "Hand-painted watercolor textures",
+        "Whimsical dreamlike atmosphere",
+        "Vibrant but soft pastel palette"
+      ],
+      "noTextRule": true,
+      "qaStatus": "warning",
+      "qaIssues": [
+        "Positive prompt contains text keywords: text",
+        "Prompt too long (> 450 chars)",
+        "Missing global locks: Vibrant but soft pastel palette",
+        "No explicit safe area/composition strategy found for subtitles."
+      ]
+    }
+  ],
+  "entitiesLock": [
+    {
+      "name": "Oliver",
+      "type": "character",
+      "description": "A small, fluffy ginger tabby cat with large, expressive amber eyes and a soft pink nose. Studio Ghibli style: soft watercolor fur textures, rounded features, and an innocent, curious expression."
+    },
+    {
+      "name": "Luna",
+      "type": "character",
+      "description": "A graceful, elderly Golden Retriever with cream-colored fur that glows with a faint white aura. She wears a crown of tiny daisies and has a calm, welcoming smile. Studio Ghibli style: gentle eyes and flowing, hand-painted fur."
+    },
+    {
+      "name": "The Gateway of Petals",
+      "type": "location",
+      "description": "A massive, ancient stone archway overgrown with glowing blue wisteria and pink cherry blossoms. It stands atop a hill of clouds, with soft sunlight streaming through the opening. Studio Ghibli style: lush vegetation, vibrant colors, and magical light rays."
+    },
+    {
+      "name": "The Eternal Meadow",
+      "type": "location",
+      "description": "Vast rolling hills of emerald green grass that never ends, dotted with shimmering wildflowers of every color. A crystal-clear stream winds through the center, and the sky is a permanent sunset of soft orange and violet. Studio Ghibli style: hyper-detailed nature, swaying grass, and painterly clouds."
+    },
+    {
+      "name": "The Star Collar",
+      "type": "object",
+      "description": "A simple leather collar that transforms into a band of woven starlight once the pet enters the meadow. It emits a soft, warm golden glow and lacks a leash, symbolizing total freedom. Studio Ghibli style: sparkling magical particles and clean, nostalgic lines."
+    }
+  ],
+  "voiceStyleInstructions": "The delivery must be deeply emotive, intimate, and warm. Treat the opening questions of each block as gentle whispers directed at the listener's heart. Use a slow, rhythmic pace with intentional pauses after each short sentence to let the imagery settle. When describing movement (running/jumping), slightly increase the energy and breathiness to convey joy, then return to a serene, grounded tone for the conclusion. Avoid a traditional commercial 'announcer' style; aim for the voice of a comforting storyteller sharing a sacred secret.",
+  "validation": {
+    "status": "ok",
+    "issues": [
+      {
+        "type": "warn",
+        "message": "[Prompt] Positive prompt contains text keywords: text"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Prompt too long (> 450 chars)"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Missing global locks: Studio Ghibli art style, Vibrant but soft pastel palette"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] No explicit safe area/composition strategy found for subtitles."
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Positive prompt contains text keywords: text"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Prompt too long (> 450 chars)"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Missing global locks: Studio Ghibli art style, Hand-painted watercolor textures, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] No explicit safe area/composition strategy found for subtitles."
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Prompt too long (> 450 chars)"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Missing global locks: Studio Ghibli art style, Hand-painted watercolor textures, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] No explicit safe area/composition strategy found for subtitles."
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Positive prompt contains text keywords: text"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Prompt too long (> 450 chars)"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Missing global locks: Studio Ghibli art style, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] No explicit safe area/composition strategy found for subtitles."
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Positive prompt contains text keywords: text"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Prompt too long (> 450 chars)"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Missing global locks: Studio Ghibli art style, Hand-painted watercolor textures, Whimsical dreamlike atmosphere, Vibrant but soft pastel palette"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] No explicit safe area/composition strategy found for subtitles."
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Positive prompt contains text keywords: text"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Prompt too long (> 450 chars)"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] Missing global locks: Vibrant but soft pastel palette"
+      },
+      {
+        "type": "warn",
+        "message": "[Prompt] No explicit safe area/composition strategy found for subtitles."
+      }
+    ]
+  }
+}
