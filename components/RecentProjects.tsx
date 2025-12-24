@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Project } from '../types';
 import { api } from '../services/api';
 
@@ -41,7 +42,7 @@ const RecentProjects: React.FC<RecentProjectsProps> = ({ onOpen }) => {
     <div className="flex-1 bg-[#0E0E10] border border-white/5 rounded-2xl p-6 min-h-[300px]">
       <div className="flex justify-between items-center mb-6">
         <h3 className="text-lg font-light text-gray-200">Proyectos Recientes</h3>
-        <button className="text-xs font-medium text-primary-500 hover:text-primary-400">Ver todos</button>
+        <Link to="/projects" className="text-xs font-medium text-primary-500 hover:text-primary-400">Ver todos</Link>
       </div>
 
       <div className="overflow-x-auto">

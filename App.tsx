@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
+import { BrowserRouter, Routes, Route, useNavigate, useLocation } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
 import Dashboard from './components/Dashboard';
 import ProjectsPage from './components/ProjectsPage';
 import NewProjectWizard from './components/NewProjectWizard';
-import ProjectEditor from './components/ProjectEditor';
+import { ProjectEditor } from './src/features/editor';
 import MediaPage from './components/MediaPage';
 import ChannelsPage from './components/ChannelsPage';
-import { checkApiKey, openApiKeySelector } from './services/geminiService';
 import { Project } from './types';
-import { HERO_PROJECT } from './constants'; // Importing for mock data access if needed
 
-const App: React.FC = () => {
-  const [currentView, setCurrentView] = useState('dashboard');
+const AppContent: React.FC = () => {
   const [isWizardOpen, setIsWizardOpen] = useState(false);
   const [editingProject, setEditingProject] = useState<Project | null>(null);
+  
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleOpenWizard = () => {
        setIsWizardOpen(true);
@@ -21,52 +22,52 @@ const App: React.FC = () => {
 
   const handleOpenEditor = (project: Project | null) => {
     setEditingProject(project);
-    setCurrentView('editor');
+    navigate('/editor');
   };
 
   const handleCloseEditor = () => {
     setEditingProject(null);
-    setCurrentView('dashboard');
+    navigate('/');
   };
+
+  const isEditor = location.pathname === '/editor';
 
   return (
     <div className="min-h-screen bg-[#050505] text-gray-100 flex font-sans selection:bg-primary-500/30">
       
       {/* Sidebar - Hidden when in Editor Mode */}
-      {currentView !== 'editor' && (
-        <Sidebar currentView={currentView} onNavigate={setCurrentView} />
+      {!isEditor && (
+        <Sidebar />
       )}
 
       {/* Main Content */}
-      <main className={`${currentView !== 'editor' ? 'ml-64' : 'w-full'} flex-1 min-h-screen overflow-hidden transition-all duration-300`}>
-        {currentView === 'dashboard' ? (
-             <div className="p-8 h-full overflow-y-auto">
-                <Dashboard 
-                    onNewProject={handleOpenWizard} 
-                    onOpenEditor={handleOpenEditor}
-                />
-             </div>
-        ) : currentView === 'projects' ? (
-             <div className="p-8 h-full overflow-y-auto">
-                <ProjectsPage 
-                    onNewProject={handleOpenWizard} 
-                    onOpenEditor={handleOpenEditor}
-                />
-             </div>
-        ) : currentView === 'media' ? (
-             <MediaPage />
-        ) : currentView === 'channels' ? (
-             <ChannelsPage />
-        ) : currentView === 'editor' ? (
-             <ProjectEditor 
-                project={editingProject} 
-                onBack={handleCloseEditor} 
-             />
-        ) : (
-             <div className="flex items-center justify-center h-full text-gray-500">
-                 Work in progress...
-             </div>
-        )}
+      <main className={`${!isEditor ? 'ml-64' : 'w-full'} flex-1 min-h-screen overflow-hidden transition-all duration-300`}>
+        <Routes>
+            <Route path="/" element={
+                 <div className="p-8 h-full overflow-y-auto">
+                    <Dashboard 
+                        onNewProject={handleOpenWizard} 
+                        onOpenEditor={handleOpenEditor}
+                    />
+                 </div>
+            } />
+            <Route path="/projects" element={
+                 <div className="p-8 h-full overflow-y-auto">
+                    <ProjectsPage 
+                        onNewProject={handleOpenWizard} 
+                        onOpenEditor={handleOpenEditor}
+                    />
+                 </div>
+            } />
+            <Route path="/media" element={<MediaPage />} />
+            <Route path="/channels" element={<ChannelsPage />} />
+            <Route path="/editor" element={
+                 <ProjectEditor 
+                    project={editingProject} 
+                    onBack={handleCloseEditor} 
+                 />
+            } />
+        </Routes>
       </main>
 
       {/* Wizard Overlay */}
@@ -74,6 +75,14 @@ const App: React.FC = () => {
         <NewProjectWizard onClose={() => setIsWizardOpen(false)} />
       )}
     </div>
+  );
+};
+
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <AppContent />
+    </BrowserRouter>
   );
 };
 

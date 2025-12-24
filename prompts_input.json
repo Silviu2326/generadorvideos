@@ -1,14 +1,162 @@
 [
   {
     "id": 1,
-    "prompt": "Explica CSS de forma sencilla para niños"
+    "prompt": "Actuando como Ingeniero de Frontend: Crea la estructura de directorios para el nuevo editor de video. Ejecuta 'mkdir -p src/features/editor/components/Timeline src/features/editor/components/Preview src/features/editor/components/Inspector src/features/editor/components/Browser src/features/editor/hooks src/features/editor/store'. Luego crea un archivo 'src/features/editor/index.ts' vacío para centralizar exportaciones."
   },
   {
     "id": 2,
-    "prompt": "Genera una lista de ideas para videos de YouTube sobre IA"
+    "prompt": "Instala 'zustand' ejecutando 'npm install zustand'. Luego crea el archivo 'src/features/editor/store/editorStore.ts'. Este archivo debe importar { create } de 'zustand'. Define una interfaz 'EditorState' con propiedades 'project' (id, name), 'playback' (isPlaying, currentTime) y 'ui' (zoomLevel). Implementa el hook 'useEditorStore' con acciones básicas (setPlayback, togglePlay). Asegúrate de exportar el hook."
   },
   {
     "id": 3,
-    "prompt": "Escribe un poema corto sobre la lluvia en Tokio"
+    "prompt": "Crea un archivo de tipos 'src/types/editor.ts'. Define y exporta las interfaces 'Clip' (id, trackId, start, duration, type), 'Track' (id, name, clips: Clip[]) y 'Project' (id, name, tracks: Track[]). NO modifiques otros archivos, solo crea este archivo de definiciones."
+  },
+  {
+    "id": 4,
+    "prompt": "Crea el componente 'src/features/editor/components/Timeline/TrackHeader.tsx'. Debe ser un componente funcional de React que reciba una prop 'track' (importada de src/types/editor.ts). Implementa botones simples para Mute, Solo y Lock usando iconos de 'lucide-react'. Si 'lucide-react' no está instalado, usa texto simple. El componente debe renderizar el nombre de la pista."
+  },
+  {
+    "id": 5,
+    "prompt": "Crea el componente 'src/features/editor/components/Timeline/Clip.tsx'. Debe recibir props 'clip' (tipo Clip) y 'zoomLevel' (number). Usa 'React.memo' para optimizarlo. El estilo debe ser absolute positioning: left = clip.start * zoomLevel. Renderiza un div con el nombre del clip. Importa los tipos necesarios de 'src/types/editor.ts'."
+  },
+  {
+    "id": 6,
+    "prompt": "Crea 'src/features/editor/components/Timeline/TimelineContainer.tsx'. Este componente debe importar 'TrackHeader' y 'Clip' (creados anteriormente) y el store 'useEditorStore' de '../../store/editorStore'. Renderiza una lista de tracks (hardcodeada o del store) mapeando cada track a un contenedor flex que incluya el TrackHeader y un área para los clips."
+  },
+  {
+    "id": 7,
+    "prompt": "Crea el hook 'src/features/editor/hooks/usePlayback.ts'. Debe importar 'useEditorStore'. Usa 'requestAnimationFrame' dentro de un useEffect para incrementar 'currentTime' cuando 'isPlaying' sea true. La función de loop debe calcular el delta time para ser precisa. Exporta { play, pause, toggle }."
+  },
+  {
+    "id": 8,
+    "prompt": "Crea 'src/features/editor/components/Preview/VideoPlayer.tsx'. Usa un elemento <video> nativo referenciado con useRef. Conecta el hook 'useEditorStore' para leer 'currentTime' y actualizar la propiedad 'currentTime' del video HTML5 en cada render o mediante un useEffect que escuche cambios. Maneja el caso de que el video sea null."
+  },
+  {
+    "id": 9,
+    "prompt": "Modifica 'src/components/ProjectEditor.tsx'. Elimina todo el código monolítico antiguo. Importa 'TimelineContainer' de '../features/editor/components/Timeline/TimelineContainer' y 'VideoPlayer' de '../features/editor/components/Preview/VideoPlayer'. Renderiza un layout CSS Grid simple: VideoPlayer arriba, TimelineContainer abajo."
+  },
+  {
+    "id": 10,
+    "prompt": "Crea 'src/features/editor/components/Inspector/InspectorPanel.tsx'. Suscríbete al store 'useEditorStore'. Si no hay 'selectedClipId', muestra 'Ningún clip seleccionado'. Si hay selección, muestra inputs simulados para 'Volumen', 'Opacidad' y 'Posición'."
+  },
+  {
+    "id": 11,
+    "prompt": "Crea 'src/features/editor/components/Browser/AssetBrowser.tsx'. Implementa un sistema de pestañas simple (Medios, Efectos) usando estado local (useState). Renderiza una grilla de items simulados (divs cuadrados) para representar archivos de video."
+  },
+  {
+    "id": 12,
+    "prompt": "Instala dnd-kit: 'npm install @dnd-kit/core @dnd-kit/modifiers'. En 'src/features/editor/components/Timeline/TimelineContainer.tsx', envuelve el área de tracks con <DndContext>. Implementa manejadores vacíos 'onDragStart' y 'onDragEnd' por ahora."
+  },
+  {
+    "id": 13,
+    "prompt": "Crea el hook 'src/features/editor/hooks/useSelection.ts'. Debe exportar funciones 'selectClip(id)' y 'deselectAll()'. Conéctalo al store 'useEditorStore' añadiendo la acción 'setSelectedClip' al store si no existe (puedes modificar editorStore.ts si es necesario)."
+  },
+  {
+    "id": 14,
+    "prompt": "Crea 'src/features/editor/hooks/useEditorShortcuts.ts'. Usa 'useEffect' para escuchar eventos 'keydown' en 'window'. Mapea 'Space' a togglePlay() del store. Mapea 'Delete' a una función console.log('Borrar clip') por ahora."
+  },
+  {
+    "id": 15,
+    "prompt": "Actualiza 'src/features/editor/components/Preview/VideoPlayer.tsx'. Asegúrate de que si el usuario hace 'seek' en la línea de tiempo (cambia currentTime en el store), el video salte a ese frame inmediatamente. Usa useEffect con dependencia [currentTime]."
+  },
+  {
+    "id": 16,
+    "prompt": "Instala react-router: 'npm install react-router-dom'. En 'src/App.tsx', importa { BrowserRouter, Routes, Route } y envuelve la aplicación. Crea rutas para '/' (Dashboard) y '/editor' (ProjectEditor). Elimina el estado manual 'currentView'."
+  },
+  {
+    "id": 17,
+    "prompt": "Modifica 'src/features/editor/store/editorStore.ts'. Importa { persist } de 'zustand/middleware'. Envuelve la creación del store con 'persist(..., { name: 'editor-storage' })' para que el estado se guarde en localStorage automáticamente."
+  },
+  {
+    "id": 18,
+    "prompt": "Crea 'src/features/editor/components/Timeline/TimeRuler.tsx'. Usa un elemento <canvas>. En un useEffect, dibuja líneas verticales cada 100px que representen segundos. El dibujo debe depender de la prop 'zoomLevel' y repintarse si cambia."
+  },
+  {
+    "id": 19,
+    "prompt": "Crea 'src/utils/timeUtils.ts'. Exporta una función 'formatTimecode(seconds: number): string'. Debe retornar formato 'MM:SS:FF' asumiendo 30fps. Maneja el padding de ceros (ej. 01:05:12)."
+  },
+  {
+    "id": 20,
+    "prompt": "Crea un archivo de barril 'src/features/editor/index.ts' (si está vacío). Exporta 'ProjectEditor' (el componente principal refactorizado) y el store 'useEditorStore' para facilitar importaciones externas."
+  },
+  {
+    "id": 21,
+    "prompt": "En la carpeta 'backend', instala dependencias: 'npm install winston helmet'. Crea 'backend/src/utils/logger.ts'. Configura winston con transportes de Consola. Exporta la constante 'logger'."
+  },
+  {
+    "id": 22,
+    "prompt": "Modifica 'backend/src/index.ts'. Importa 'helmet' y úsalo como middleware: 'app.use(helmet())'. Importa 'logger' de './utils/logger' y reemplaza el console.log del 'app.listen' con 'logger.info(...)'."
+  },
+  {
+    "id": 23,
+    "prompt": "Crea 'backend/src/middlewares/errorHandler.ts'. Exporta una función middleware (err, req, res, next). Debe loguear el error con 'logger.error' y responder con status 500 y JSON { success: false, message: err.message }."
+  },
+  {
+    "id": 24,
+    "prompt": "En 'backend', instala zod: 'npm install zod'. Crea 'backend/src/schemas/projectSchemas.ts'. Define 'createProjectSchema' usando z.object({ name: z.string(), width: z.number().optional() }). Exporta el esquema."
+  },
+  {
+    "id": 25,
+    "prompt": "Modifica 'backend/src/controllers/projectController.ts'. Importa 'createProjectSchema'. En 'createProject', usa 'createProjectSchema.parse(req.body)' dentro de un try-catch. Si falla, devuelve status 400."
+  },
+  {
+    "id": 26,
+    "prompt": "En 'backend', instala colas: 'npm install bullmq ioredis'. Crea 'backend/src/queues/mediaQueue.ts'. Configura una nueva 'Queue' llamada 'media-processing' conectada a Redis (usa process.env.REDIS_URL o localhost por defecto)."
+  },
+  {
+    "id": 27,
+    "prompt": "Crea 'backend/src/workers/mediaWorker.ts'. Importa { Worker } de 'bullmq'. Crea un worker que escuche 'media-processing'. En la función de proceso, solo haz logger.info('Procesando trabajo:', job.id) por ahora."
+  },
+  {
+    "id": 28,
+    "prompt": "En 'backend/src/controllers/mediaController.ts', añade un método 'uploadIntent'. Genera un nombre de archivo único. Devuelve un JSON { uploadUrl: 'https://fake-s3-url...', fileKey: '...' } simulado."
+  },
+  {
+    "id": 29,
+    "prompt": "En 'backend/src/controllers/mediaController.ts', añade método 'handleWebhook'. Extrae el 'fileKey' del body. Importa 'mediaQueue' de '../queues/mediaQueue' y ejecuta 'mediaQueue.add('transcode', { fileKey })'."
+  },
+  {
+    "id": 30,
+    "prompt": "En 'backend', instala sockets: 'npm install socket.io'. Modifica 'backend/src/index.ts'. Importa { Server } de 'socket.io'. Crea la instancia 'io' adjunta al servidor HTTP existente (httpServer). Exporta 'io' o pásalo a un handler."
+  },
+  {
+    "id": 31,
+    "prompt": "Crea 'backend/src/websockets/socketHandler.ts'. Exporta una función 'initSockets(io)'. Escucha el evento 'connection'. Dentro, escucha 'join-project' y haz 'socket.join(projectId)'."
+  },
+  {
+    "id": 32,
+    "prompt": "En 'backend/src/websockets/socketHandler.ts', añade listener para 'project-update'. Debe recibir { projectId, delta }. Ejecuta 'socket.to(projectId).emit('project-update', delta)' para retransmitir a otros."
+  },
+  {
+    "id": 33,
+    "prompt": "Instala rate-limit: 'npm install express-rate-limit'. En 'backend/src/index.ts', configura 'limiter' con windowMs: 15*60*1000 y max: 100. Aplica 'app.use(limiter)' globalmente."
+  },
+  {
+    "id": 34,
+    "prompt": "Crea 'backend/src/services/storageService.ts'. Define una clase con métodos estáticos 'getSignedUrl(key)' y 'deleteFile(key)'. Implementa logs simulados si no hay credenciales reales de S3."
+  },
+  {
+    "id": 35,
+    "prompt": "Modifica 'backend/src/controllers/projectController.ts'. En 'deleteProject', antes de borrar de la DB, itera sobre los assets del proyecto (simulado) y llama a 'storageService.deleteFile()' para cada uno."
+  },
+  {
+    "id": 36,
+    "prompt": "Crea 'backend/src/scripts/test-queue.ts'. Script independiente que importa 'mediaQueue', añade un trabajo de prueba y luego se cierra (process.exit). Útil para verificar conexión a Redis."
+  },
+  {
+    "id": 37,
+    "prompt": "Crea 'backend/src/middlewares/auth.ts'. Middleware que verifique 'req.headers.authorization'. Si existe, decodifica un JWT (simulado o con jsonwebtoken). Si no, devuelve 401 Unauthorized."
+  },
+  {
+    "id": 38,
+    "prompt": "En 'backend/src/routes/projectRoutes.ts', importa el middleware de 'auth.ts'. Inyectalo en las rutas POST, PUT y DELETE: 'router.post('/', auth, projectController.createProject)'."
+  },
+  {
+    "id": 39,
+    "prompt": "Crea 'backend/.env.example'. Lista las variables: PORT=3000, REDIS_URL=redis://localhost:6379, SUPABASE_URL=..., SUPABASE_KEY=..., JWT_SECRET=change_me."
+  },
+  {
+    "id": 40,
+    "prompt": "Revisión final Backend: Verifica que 'backend/package.json' tenga todas las dependencias nuevas (winston, helmet, zod, bullmq, socket.io, express-rate-limit). Si falta alguna, muestra un comando para instalarla."
   }
 ]

@@ -1,14 +1,13 @@
 import React from 'react';
 import { LayoutDashboard, FolderOpen, Film, Tv, Settings } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { CURRENT_USER } from '../constants';
 import { NavItem } from '../types';
 
-interface SidebarProps {
-  currentView: string;
-  onNavigate: (view: string) => void;
-}
+const Sidebar: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
-const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => {
   const navItems: NavItem[] = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'projects', label: 'Proyectos', icon: FolderOpen },
@@ -16,11 +15,28 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => {
     { id: 'channels', label: 'Canales', icon: Tv },
   ];
 
+  const getPath = (id: string) => {
+    switch (id) {
+        case 'dashboard': return '/';
+        case 'projects': return '/projects';
+        case 'media': return '/media';
+        case 'channels': return '/channels';
+        default: return '/';
+    }
+  };
+
+  const isActive = (id: string) => {
+      const path = getPath(id);
+      if (path === '/' && location.pathname === '/') return true;
+      if (path !== '/' && location.pathname.startsWith(path)) return true;
+      return false;
+  };
+
   return (
     <div className="w-64 h-full min-h-screen bg-[#09090b] border-r border-white/5 flex flex-col justify-between fixed left-0 top-0 z-50">
       <div>
         {/* Logo Area */}
-        <div className="p-6 flex items-center gap-3 mb-4 cursor-pointer" onClick={() => onNavigate('dashboard')}>
+        <div className="p-6 flex items-center gap-3 mb-4 cursor-pointer" onClick={() => navigate('/')}>
           <div className="w-8 h-8 bg-primary-600 rounded-lg flex items-center justify-center font-bold text-white shadow-[0_0_15px_rgba(99,102,241,0.5)]">
             CS
           </div>
@@ -35,9 +51,9 @@ const Sidebar: React.FC<SidebarProps> = ({ currentView, onNavigate }) => {
           {navItems.map((item) => (
             <button
               key={item.id}
-              onClick={() => onNavigate(item.id)}
+              onClick={() => navigate(getPath(item.id))}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200 ${
-                currentView === item.id
+                isActive(item.id)
                   ? 'bg-primary-600/10 text-primary-500 border-l-2 border-primary-500'
                   : 'text-gray-400 hover:text-white hover:bg-white/5'
               }`}
