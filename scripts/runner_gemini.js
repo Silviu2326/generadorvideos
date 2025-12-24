@@ -21,7 +21,7 @@ function runPrompt(promptText, index, total) {
         // En Windows con shell: true, es más seguro pasar el prompt entre comillas dobles explícitas
         // para evitar que se interprete como múltiples argumentos.
         const safePrompt = `"${promptText.replace(/"/g, '\\"')}"`;
-        const args = ['--yolo', '--model', 'gemini-3-pro-preview', safePrompt];
+        const args = ['--yolo', '--model', 'gemini-3-flash-preview', safePrompt];
 
         const start = Date.now();
         

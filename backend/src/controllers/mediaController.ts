@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import { mediaQueue } from '../queues/mediaQueue';
 import { MediaAsset, Folder } from '../types';
 
 // Mock Data
@@ -44,4 +45,22 @@ export const deleteAsset = (req: Request, res: Response) => {
 
 export const getFolders = (req: Request, res: Response) => {
   res.json(folders);
+};
+
+export const uploadIntent = (req: Request, res: Response) => {
+  const { filename } = req.body;
+  const uniqueId = Date.now().toString(36) + Math.random().toString(36).substring(2);
+  const extension = filename ? filename.split('.').pop() : 'bin';
+  const fileKey = `uploads/${uniqueId}.${extension}`;
+  
+  res.json({
+    uploadUrl: `https://fake-s3-url.com/bucket/${fileKey}?token=simulated-token`,
+    fileKey: fileKey
+  });
+};
+
+export const handleWebhook = async (req: Request, res: Response) => {
+  const { fileKey } = req.body;
+  await mediaQueue.add('transcode', { fileKey });
+  res.status(200).send({ status: 'queued' });
 };

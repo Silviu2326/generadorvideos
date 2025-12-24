@@ -1,6 +1,8 @@
 import { Request, Response } from 'express';
 import { supabase } from '../config/supabase';
 import { Project } from '../types';
+import { createProjectSchema } from '../schemas/projectSchemas';
+import { StorageService } from '../services/storageService';
 
 export const getAllProjects = async (req: Request, res: Response) => {
   console.log('GET /api/projects hit');
@@ -31,16 +33,21 @@ export const getProjectById = async (req: Request, res: Response) => {
 };
 
 export const createProject = async (req: Request, res: Response) => {
-  const project: Project = req.body;
-  const { data, error } = await supabase
-    .from('projects')
-    .insert([project])
-    .select();
+  try {
+    createProjectSchema.parse(req.body);
+    const project: Project = req.body;
+    const { data, error } = await supabase
+      .from('projects')
+      .insert([project])
+      .select();
 
-  if (error) {
-    return res.status(500).json({ error: error.message });
+    if (error) {
+      return res.status(500).json({ error: error.message });
+    }
+    res.status(201).json(data);
+  } catch (error) {
+    return res.status(400).json({ error });
   }
-  res.status(201).json(data);
 };
 
 export const updateProject = async (req: Request, res: Response) => {
@@ -60,6 +67,32 @@ export const updateProject = async (req: Request, res: Response) => {
 
 export const deleteProject = async (req: Request, res: Response) => {
   const { id } = req.params;
+
+  // 1. Fetch project to identify assets
+  const { data: project, error: fetchError } = await supabase
+    .from('projects')
+    .select('*')
+    .eq('id', id)
+    .single();
+
+  if (fetchError) {
+    return res.status(404).json({ error: 'Project not found' });
+  }
+
+  // 2. Iterate over assets and delete them (simulated)
+  const assetsToDelete: string[] = [];
+  if (project.thumbnail) {
+    assetsToDelete.push(project.thumbnail);
+  }
+  // Adding simulated assets for demonstration
+  assetsToDelete.push(`projects/${id}/assets/video_preview.mp4`);
+  assetsToDelete.push(`projects/${id}/assets/audio_track.mp3`);
+
+  for (const assetKey of assetsToDelete) {
+    await StorageService.deleteFile(assetKey);
+  }
+
+  // 3. Delete from DB
   const { error } = await supabase
     .from('projects')
     .delete()
